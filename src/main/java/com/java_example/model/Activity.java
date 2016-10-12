@@ -3,7 +3,7 @@ package com.java_example.model;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-//@XmlRootElement
+@XmlRootElement
 public class Activity {
 
     private String id;
