@@ -5,7 +5,7 @@
 
     <groupId>com.java_example</groupId>
     <artifactId>simple-service</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>simple-service</name>
 
@@ -24,7 +24,7 @@
     <dependencies>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
-            <artifactId>jersey-container-grizzly2-http</artifactId>
+            <artifactId>jersey-container-servlet-core</artifactId>
         </dependency>
          <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
@@ -51,18 +51,12 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
                 <configuration>
-                    <mainClass>com.java_example.Main</mainClass>
+                    <url>http://localhost:8080</url>
+                    <path>/</path>
                 </configuration>
             </plugin>
         </plugins>
